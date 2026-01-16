@@ -1,6 +1,7 @@
 import AboutGoRant from "@/component/HomePageSections/AboutGoRant";
 import Banner from "@/component/HomePageSections/Banner";
 import CarRentalSteps from "@/component/HomePageSections/CarRentalSteps";
+import Cars from "@/component/HomePageSections/Cars";
 import DownloadApp from "@/component/HomePageSections/DownloadApp";
 import FAQ from "@/component/HomePageSections/FAQ";
 import RideBookCTA from "@/component/HomePageSections/RideBookCTA";
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="min-h-screen font-sans dark:bg-black">
       <Banner />
       <CarRentalSteps />
+      <Cars />
       <AboutGoRant />
       <RideBookCTA />
       <WhyChooseUs />
