@@ -3,7 +3,7 @@ import React from "react";
 const BookingForm = () => {
   return (
     <div
-      className="relative w-full max-w-6xl mx-auto -mt-20 rounded-xl p-8 md:p-12
+      className="relative w-full max-w-6xl mx-auto  md:-mt-20 rounded-xl p-8 md:p-12
              bg-[url('/home4-car-book-bg.png')] bg-cover bg-center bg-no-repeat bg-white/80 shadow"
     >
       <h2 className="text-3xl font-extrabold text-gray-900 mb-8 text-center">
