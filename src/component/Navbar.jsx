@@ -15,7 +15,7 @@ const Navbar = () => {
             {/* LOGO */}
             <div className=" cursor-pointer">
               <h2 className="text-xl font-extrabold tracking-tight">
-                <span className="text-[#ff5c30]">Go</span>Rent
+                <span className="text-primary">Go</span>Rent
               </h2>
             </div>
 
@@ -44,7 +44,7 @@ const Navbar = () => {
               <button className="text-sm font-bold px-4 py-2 hover:text-primary transition-colors">
                 Sign In
               </button>
-              <button className="bg-[#ff5c30] text-white text-sm font-bold px-6 py-2.5 rounded-lg shadow-lg shadow-[#ff5c30]/20 hover:scale-105 transition-all">
+              <button className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-all">
                 Register
               </button>
             </div>
