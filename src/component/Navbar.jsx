@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Container from "./Container";
+import Link from "next/link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -41,9 +42,9 @@ const Navbar = () => {
 
             {/* DESKTOP BUTTONS */}
             <div className="hidden lg:flex items-center gap-4">
-              <button className="text-sm font-bold px-4 py-2 hover:text-primary transition-colors">
+              <Link href={"/login"} className="text-sm font-bold px-4 py-2 hover:text-primary transition-colors">
                 Sign In
-              </button>
+              </Link>
               <button className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-all">
                 Register
               </button>
@@ -99,10 +100,10 @@ const Navbar = () => {
 
           <hr />
 
-          <button className="text-sm font-bold text-left">Sign In</button>
-          <button className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg">
+          <Link href={"/login"} className="cursor-pointer text-sm font-bold text-left">Sign In</Link>
+          {/* <button className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg">
             Register
-          </button>
+          </button> */}
         </nav>
       </div>
     </>
