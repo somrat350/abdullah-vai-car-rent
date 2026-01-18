@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Container from "./Container";
 import Link from "next/link";
+import { FaXmark } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -42,17 +44,19 @@ const Navbar = () => {
 
             {/* DESKTOP BUTTONS */}
             <div className="hidden lg:flex items-center gap-4">
-              <Link href={"/login"} className="text-sm font-bold px-4 py-2 hover:text-primary transition-colors">
+              <Link href={"/login"} className="btn btn-primary">
                 Sign In
               </Link>
-              <button className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-all">
+              {/* <button className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-all">
                 Register
-              </button>
+              </button> */}
             </div>
 
             {/* MOBILE HAMBURGER */}
             <button className="lg:hidden" onClick={() => setOpen(true)}>
-              <span className="material-symbols-outlined text-3xl">menu</span>
+              <span className="material-symbols-outlined">
+                <FaBars size={20} />
+              </span>
             </button>
           </div>
         </Container>
@@ -68,14 +72,16 @@ const Navbar = () => {
 
       {/* MOBILE SLIDE MENU */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-white dark:bg-background-dark z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-72 bg-base-200 z-50 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="p-6 flex justify-between items-center border-b">
           <h3 className="font-bold text-lg">Menu</h3>
           <button onClick={() => setOpen(false)}>
-            <span className="material-symbols-outlined text-2xl">close</span>
+            <span className="material-symbols-outlined">
+              <FaXmark size={20} />
+            </span>
           </button>
         </div>
 
@@ -100,7 +106,9 @@ const Navbar = () => {
 
           <hr />
 
-          <Link href={"/login"} className="cursor-pointer text-sm font-bold text-left">Sign In</Link>
+          <Link href={"/login"} className="btn btn-primary">
+            Sign In
+          </Link>
           {/* <button className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg">
             Register
           </button> */}
