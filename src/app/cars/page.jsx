@@ -1,8 +1,7 @@
 import Cars from "@/component/HomePageSections/Cars";
 import PageBanner from "@/component/PageTopBanner/PageBanner";
-import React from "react";
 
-const page = () => {
+const page = async () => {
   return (
     <div className="min-h-screen font-sans dark:bg-black">
       <PageBanner />

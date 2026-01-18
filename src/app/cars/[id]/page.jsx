@@ -1,13 +1,21 @@
-import PageBanner from "@/component/PageTopBanner/PageBanner";
-import React from "react";
 import { CheckCircle, PhoneCall } from "lucide-react";
 import Container from "@/component/Container";
+import { cars } from "../../../../public/cars";
 
-const page = () => {
+const page = ({ params }) => {
+  const id = Number(params.id);
+
+  console.log(id);
+  const car = cars.find((c) => c.id === id);
+
   return (
     <div>
       {/* Page Banner  */}
-      <section className="py-20 h-100 relative w-full  bg-[url('/carsPageBanner.jpg')] bg-fixed bg-cover bg-center flex items-center justify-center">
+      <section
+        className={
+          "py-20 h-100 relative w-full  bg-[url('/marcedes-offer.png')] bg-fixed bg-cover bg-center flex items-center justify-center"
+        }
+      >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
 
@@ -28,12 +36,7 @@ const page = () => {
           <div className="grid lg:grid-cols-3 gap-8 justify-between items-start">
             {/* Price Card */}
             <div className="bg-orange-50 rounded-2xl p-6 space-y-5 shadow-sm sticky top-30">
-              <h2 className="text-3xl font-bold text-gray-900">
-                $259{" "}
-                <span className="text-sm font-normal text-gray-500">
-                  / Per Day
-                </span>
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900">${car.price}</h2>
 
               <ul className="space-y-3 text-sm text-gray-700">
                 <li className="flex justify-between">
@@ -46,7 +49,7 @@ const page = () => {
                 </li>
                 <li className="flex justify-between">
                   <span>Transmission</span>
-                  <span>Auto</span>
+                  <span>{car.transmission}</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Age</span>
@@ -77,7 +80,7 @@ const page = () => {
               {/* Image Section */}
               <div className="rounded-2xl overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738"
+                  src={car.image}
                   alt="Car"
                   className="w-full h-[380px] object-cover"
                 />

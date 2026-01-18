@@ -9,6 +9,21 @@ import { FaBars } from "react-icons/fa";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  const menu = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "Cars",
+      link: "/cars",
+    },
+    {
+      title: "About",
+      link: "/about",
+    },
+  ];
+
   return (
     <>
       {/* NAVBAR */}
@@ -24,21 +39,14 @@ const Navbar = () => {
 
             {/* DESKTOP MENU */}
             <nav className="hidden lg:flex items-center gap-8">
-              {[
-                "Home",
-                "About",
-                "Vehicle Models",
-                "Testimonials",
-                "Our Team",
-                "Contact",
-              ].map((item) => (
-                <a
-                  key={item}
-                  href="#"
+              {menu.map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.link}
                   className="text-sm font-semibold hover:text-primary transition-colors"
                 >
-                  {item}
-                </a>
+                  {item.title}
+                </Link>
               ))}
             </nav>
 
@@ -86,22 +94,15 @@ const Navbar = () => {
         </div>
 
         <nav className="flex flex-col gap-6 p-6">
-          {[
-            "Home",
-            "About",
-            "Vehicle Models",
-            "Testimonials",
-            "Our Team",
-            "Contact",
-          ].map((item) => (
-            <a
-              key={item}
-              href="#"
+          {menu.map((item, i) => (
+            <Link
+              key={i}
+              href={item.link}
               onClick={() => setOpen(false)}
               className="text-sm font-semibold hover:text-primary transition-colors"
             >
-              {item}
-            </a>
+              {item.title}
+            </Link>
           ))}
 
           <hr />
